@@ -252,6 +252,7 @@ export default {
           }
         });
     },
+    //Initiale SPARQL-Abfragen (auf Basis queries.js)
     queryModuleInfo(q) {
       axios
         .post(
@@ -268,6 +269,10 @@ export default {
         .catch((e) => {
           this.errors.push(e);
         });
+      
+      //SPARQL-Abfrage Log-Ausgabe
+      console.log("SVGGraph - queryModule");
+      console.log(q);
     },
     updateGraphText() {
       let module = d3.select("#textModulkuerzel").select("tspan");
